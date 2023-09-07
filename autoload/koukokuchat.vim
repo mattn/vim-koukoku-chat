@@ -19,6 +19,7 @@ function! s:koukokuchat_cb_out(ch, msg) abort
     let l:winid = bufwinid('__電子公告チャット__')
   endif
   call win_execute(l:winid, 'setlocal modifiable', 1)
+  call win_execute(l:winid, 'normal! G', 1)
   call win_execute(l:winid, 'call append(line("$"), a:msg)', 1)
   call win_execute(l:winid, 'setlocal nomodifiable nomodified', 1)
 endfunction
